@@ -18,8 +18,8 @@ public class EmployeeResource {
     }
 
     @GET
-    public List<Employee> findAll(){
-        return employeeRepository.findAll();
+    public List<Employee> getEmployees(){
+        return employeeRepository.getEmployees();
     }
 
     @GET
@@ -29,13 +29,13 @@ public class EmployeeResource {
     }
 
     @POST
-    public Employee save(Employee employee){
-        return employeeRepository.save(employee);
+    public Employee addEmployees(Employee employee){
+        return employeeRepository.addEmployees(employee);
     }
 
     @PUT
     @Path("{id}")
-    public Boolean update(@PathParam("id") Integer id, Employee employee){
-        return employeeRepository.update(id, employee);
+    public Boolean updateEmployees(@PathParam("id") Integer id, Employee employee){
+        return employeeRepository.updateEmployees(id, employee);
     }
 }

@@ -11,7 +11,7 @@ public class EmployeeRepository implements IEmployeeRepository{
 
 
     @Override
-    public List<Employee> findAll() {
+    public List<Employee> getEmployees() {
         if (employeeModel.getAll().size() <= 0){
             employeeModel.save(new Employee("Hoang Tu", new BigDecimal(1000)));
             employeeModel.save(new Employee("Bui Chi Thanh", new BigDecimal(1500)));
@@ -24,13 +24,13 @@ public class EmployeeRepository implements IEmployeeRepository{
     }
 
     @Override
-    public Employee save(Employee employee) {
+    public Employee addEmployees(Employee employee) {
         employeeModel.save(employee);
         return employee;
     }
 
     @Override
-    public Boolean update(Integer id, Employee updateEmployee) {
+    public Boolean updateEmployees(Integer id, Employee updateEmployee) {
         Employee existProduct = employeeModel.findById(id);
 
         existProduct.setName(updateEmployee.getName());
